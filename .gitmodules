@@ -57,7 +57,7 @@
 	url = https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator.git
 [submodule "breakpad"]
 	path = externals/breakpad
-	url = https://github.com/yuzu-emu-mirror/breakpad.git  #Mansoor
+	url = https://github.com/yuzulator/breakpad.git
 [submodule "simpleini"]
 	path = externals/simpleini
 	url = https://github.com/brofield/simpleini.git
