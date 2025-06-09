@@ -5,10 +5,10 @@ name: yuzu-ci
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
     tags: [ "*" ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   transifex:
@@ -27,7 +27,7 @@ jobs:
 
   reuse:
     runs-on: ubuntu-latest
-    if: ${{ github.repository == 'yuzu-emu/yuzu' }}
+    if: ${{ github.repository == 'yuzulator/yuzu-mainline' }}
     steps:
     - uses: actions/checkout@v3
     - uses: fsfe/reuse-action@v1
