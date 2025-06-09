@@ -27,7 +27,7 @@ fi
 # Build an AppImage
 cd build
 
-wget -nc https://github.com/yuzu-emu/ext-linux-bin/raw/main/appimage/appimagetool-x86_64.AppImage
+wget -nc https://github.com/yuzulator/ext-linux-bin/raw/main/appimage/appimagetool-x86_64.AppImage
 chmod 755 appimagetool-x86_64.AppImage
 
 # if FUSE is not available, then fallback to extract and run
@@ -42,7 +42,7 @@ fi
 
 if [ "${RELEASE_NAME}" = "mainline" ]; then
     # Generate update information if releasing to mainline
-    ./appimagetool-x86_64.AppImage -u "gh-releases-zsync|yuzu-emu|yuzu-${RELEASE_NAME}|latest|yuzu-*.AppImage.zsync" AppDir "${APPIMAGE_NAME}"
+    ./appimagetool-x86_64.AppImage -u "gh-releases-zsync|yuzulator|yuzu-${RELEASE_NAME}|latest|yuzu-*.AppImage.zsync" AppDir "${APPIMAGE_NAME}"
 else
     ./appimagetool-x86_64.AppImage AppDir "${APPIMAGE_NAME}"
 fi
