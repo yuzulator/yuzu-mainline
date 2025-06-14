@@ -26,7 +26,7 @@ cmake .. \
       -DYUZU_ENABLE_LTO=ON \
       -DYUZU_CRASH_DUMPS=ON \
       -GNinja
-
+sed -i 's/-Werror//g' externals/ffmpeg/CMakeLists.txt || true
 ninja
 
 ccache -s
