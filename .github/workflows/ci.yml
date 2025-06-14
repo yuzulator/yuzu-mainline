@@ -13,8 +13,8 @@ on:
 jobs:
   transifex:
     runs-on: ubuntu-latest
-    container: yuzuemu/build-environments:linux-transifex
-    if: ${{ github.repository == 'yuzu-emu/yuzu' && !github.head_ref }}
+    container: yuzulator/build-environments:linux-transifex
+    if: ${{ github.repository == 'yuzulator/yuzu' && !github.head_ref }}
     steps:
       - uses: actions/checkout@v3
         with:

@@ -39,7 +39,7 @@ jobs:
           - type: windows
             image: linux-mingw
     container:
-      image: yuzuemu/build-environments:${{ matrix.image }}
+      image: yuzulator/build-environments:${{ matrix.image }}
       options: -u 1001
     steps:
       - uses: actions/checkout@v3
