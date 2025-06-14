@@ -12,8 +12,7 @@ mkdir build || true && cd build
 cmake .. \
       -DBoost_USE_STATIC_LIBS=ON \
       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
-      -DCMAKE_CXX_FLAGS="-march=x86-64-v2 -Wno-error" \
-      -DCMAKE_C_FLAGS="-Wno-error" \
+      -DCMAKE_CXX_FLAGS="-march=x86-64-v2" \
       -DCMAKE_CXX_COMPILER=/usr/lib/ccache/g++ \
       -DCMAKE_C_COMPILER=/usr/lib/ccache/gcc \
       -DCMAKE_INSTALL_PREFIX="/usr" \
@@ -22,11 +21,11 @@ cmake .. \
       -DENABLE_QT_TRANSLATION=ON \
       -DUSE_DISCORD_PRESENCE=ON \
       -DYUZU_ENABLE_COMPATIBILITY_REPORTING=${ENABLE_COMPATIBILITY_REPORTING:-"OFF"} \
-      -DYUZU_USE_BUNDLED_FFMPEG=ON \
+      -DYUZU_USE_BUNDLED_FFMPEG=OFF \
       -DYUZU_ENABLE_LTO=ON \
       -DYUZU_CRASH_DUMPS=ON \
       -GNinja
-sed -i 's/-Werror//g' externals/ffmpeg/CMakeLists.txt || true
+
 ninja
 
 ccache -s
