@@ -7,6 +7,9 @@ trigger:
 variables:
   DisplayVersion: $[counter(variables['DisplayPrefix'], 1)]
 
+pool:
+  name: CustomDockerPool
+
 stages:
 - stage: build
   displayName: 'build'
